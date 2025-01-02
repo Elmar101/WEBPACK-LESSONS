@@ -1,0 +1,15 @@
+$button-color: blue;
+
+.button {
+  background-color: $button-color;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+
+  &:hover {
+    background-color: darken($button-color, 10%);
+  }
+}
+
+  

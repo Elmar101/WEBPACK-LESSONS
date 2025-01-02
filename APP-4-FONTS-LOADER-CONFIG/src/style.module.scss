@@ -1,0 +1,24 @@
+.title {
+  color: blue;
+  font-family: "Rouge Script", cursive;
+}
+
+$primary-color: red;
+$secondary-color: blue;
+
+.button {
+  color: $primary-color;
+  &:hover {
+    color: darken($primary-color, 10%);
+  }
+  background-color: darken($secondary-color, 10%);
+  padding: 10px;
+  font-family: "Playwrite HR Lijeva", cursive;
+  border: none;
+  border-radius: 5px;
+}
+
+.logo {
+  width: 200px;
+  height: 200px;
+}

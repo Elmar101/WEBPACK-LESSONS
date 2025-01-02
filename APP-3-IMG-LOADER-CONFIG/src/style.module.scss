@@ -1,0 +1,22 @@
+.title {    
+    color: blue;
+}
+
+$primary-color: red;
+$secondary-color: blue;
+
+.button {
+  color: $primary-color;
+  &:hover {
+    color: darken($primary-color, 10%);
+  }
+  background-color: darken($secondary-color, 10%);
+  padding: 10px;
+  border: none;
+  border-radius: 5px; 
+}
+
+.logo {
+  width: 200px;
+  height: 200px;
+}

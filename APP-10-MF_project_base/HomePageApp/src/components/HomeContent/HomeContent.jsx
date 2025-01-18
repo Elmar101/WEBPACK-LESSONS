@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import QuickBooking from "../QuickBooking/QuickBooking.jsx";
 import "./HomeContent.scss";
+import RoutingContext from "../../utils/RoutingProvider.js";
 
 const MovieCard = React.lazy(() => import("components/MovieCard"));
 
@@ -27,7 +28,6 @@ const HomeContent = (props) => {
   };
 
   const renderMovieList = () => {
-    
     return movies.map((item) => {
       return (
         <div onClick={() => movieClicked(item)} key={item.name}>
@@ -39,12 +39,15 @@ const HomeContent = (props) => {
 
   return (
     <div className="home-content-container">
-      <QuickBooking />
-      <div className="movies-container">
-        <React.Suspense fallback={<div>Loading...</div>}>
-          {renderMovieList()}
-        </React.Suspense>
-      </div>
+      <RoutingContext.Provider value={props.routing}>
+        <QuickBooking />
+
+        <div className="movies-container">
+          <React.Suspense fallback={<div>Loading...</div>}>
+            {renderMovieList()}
+          </React.Suspense>
+        </div>
+      </RoutingContext.Provider>
     </div>
   );
 };
